@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Gradle dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -38,7 +38,7 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
       
     - name: Upload APK as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: cbse-question-papers-debug
         path: app/build/outputs/apk/debug/*.apk
@@ -51,7 +51,7 @@ jobs:
       
     - name: Upload Release APK as artifact (if exists)
       if: success()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: cbse-question-papers-release
         path: app/build/outputs/apk/release/*.apk
