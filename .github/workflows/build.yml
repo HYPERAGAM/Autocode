@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Gradle packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -38,7 +38,7 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
       
     - name: Upload Debug APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: CBSE-QuestionPapers-Debug-APK
         path: app/build/outputs/apk/debug/app-debug.apk
@@ -47,7 +47,7 @@ jobs:
       run: ./gradlew assembleRelease --stacktrace
       
     - name: Upload Release APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: CBSE-QuestionPapers-Release-APK
         path: app/build/outputs/apk/release/app-release-unsigned.apk
